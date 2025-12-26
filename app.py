@@ -1,7 +1,12 @@
 from flask import Flask, jsonify
 import random
+import os
 
 app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "SpeedCheckPlus Backend is Live"
 
 @app.route("/speedtest")
 def speedtest():
@@ -12,4 +17,5 @@ def speedtest():
     })
 
 if __name__ == "__main__":
-    app.run()
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
