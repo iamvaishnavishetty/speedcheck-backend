@@ -1,0 +1,5 @@
+fastapi
+uvicorn
+speedtest-cli
+pandas
+scikit-learn
